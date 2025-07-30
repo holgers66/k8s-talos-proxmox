@@ -21,7 +21,6 @@ data "talos_machine_configuration" "this" {
     templatefile("${path.module}/machine-config/control-plane.yaml.tftpl", {
       hostname       = each.key
       node_name      = each.value.host_node
-      cluster_name   = var.cluster.proxmox_cluster
       cilium_values  = var.cilium.values
       cilium_install = var.cilium.install
     })
@@ -29,7 +28,6 @@ data "talos_machine_configuration" "this" {
     templatefile("${path.module}/machine-config/worker.yaml.tftpl", {
       hostname     = each.key
       node_name    = each.value.host_node
-      cluster_name = var.cluster.proxmox_cluster
     })
   ]
 }
