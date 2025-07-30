@@ -21,7 +21,6 @@ module "talos" {
     endpoint        = "192.168.178.240"
     gateway         = "192.168.178.1"
     talos_version   = "v1.7"
-    proxmox_cluster = "pve"
   }
 
   nodes = {
@@ -32,6 +31,7 @@ module "talos" {
       vm_id         = 800
       cpu           = 8
       ram_dedicated = 4096
+      host_node     = "pve"
     }
     "work-00" = {
       machine_type  = "worker"
@@ -40,6 +40,7 @@ module "talos" {
       vm_id         = 810
       cpu           = 4
       ram_dedicated = 4096
+      host_node     = "pve"
     }
     "work-01" = {
       machine_type  = "worker"
@@ -48,6 +49,7 @@ module "talos" {
       vm_id         = 811
       cpu           = 4
       ram_dedicated = 4096
+      host_node     = "pve"
     }
     "work-02" = {
       machine_type  = "worker"
@@ -56,6 +58,7 @@ module "talos" {
       vm_id         = 812
       cpu           = 8
       ram_dedicated = 4096
+      host_node     = "pve"
     }
   }
 }
