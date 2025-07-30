@@ -103,6 +103,7 @@ module "volumes" {
   volumes = {
     pv-test = {
       size = "4G"
+      node = "pve"       
     }
   }
 }
