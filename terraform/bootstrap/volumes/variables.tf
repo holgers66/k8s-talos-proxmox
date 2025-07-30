@@ -4,7 +4,6 @@ variable "proxmox_api" {
     endpoint     = string
     insecure     = bool
     api_token    = string
-    cluster_name = string
   })
   sensitive = true
 }
@@ -14,7 +13,7 @@ variable "volumes" {
     object({
       node = string
       size = string
-      storage = optional(string, "local-zfs")
+      storage = optional(string, "local-lvm")
       vmid = optional(number, 9999)
       format = optional(string, "raw")
     })
