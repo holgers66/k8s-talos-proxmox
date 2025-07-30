@@ -51,7 +51,6 @@ clusters:
   insecure: ${var.proxmox.insecure}
   token_id: "${proxmox_virtual_environment_user_token.kubernetes-csi-token.id}"
   token_secret: "${element(split("=", proxmox_virtual_environment_user_token.kubernetes-csi-token.value), length(split("=", proxmox_virtual_environment_user_token.kubernetes-csi-token.value)) - 1)}"
-  region: ${var.proxmox.cluster_name}
 EOF
   }
 }
